@@ -11,7 +11,8 @@
 		"preview": "bun run build && wrangler pages dev",
 		"deploy": "bun run build && wrangler pages deploy",
 		"lint": "biome check",
-		"format": "biome check --write"
+		"format": "biome check --write",
+		"test": "vitest"
 	},
 	"dependencies": {
 		"@tanstack/react-router": "^1.57.17",
@@ -33,6 +34,7 @@
 		"typescript": "^5.5.3",
 		"vite": "^5.4.1",
 		"vite-tsconfig-paths": "^5.0.1",
+		"vitest": "^2.1.1",
 		"wrangler": "^3.78.2"
 	},
 	"overrides": {
