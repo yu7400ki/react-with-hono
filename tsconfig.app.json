@@ -33,5 +33,5 @@
 			"path": "./tsconfig.api.json"
 		}
 	],
-	"include": ["src"]
+	"include": ["src", ".storybook/**/*"]
 }
