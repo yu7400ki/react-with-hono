@@ -29,3 +29,5 @@ dist-ssr
 
 # TanStack Router
 routeTree.gen.ts
+
+*storybook.log
