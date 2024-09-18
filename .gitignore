@@ -30,4 +30,8 @@ dist-ssr
 # TanStack Router
 routeTree.gen.ts
 
+# Storybook
 *storybook.log
+
+# happy css modules
+**/*.css.d.ts*
