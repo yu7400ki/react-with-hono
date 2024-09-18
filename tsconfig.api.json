@@ -6,19 +6,27 @@
 		"skipLibCheck": true,
 
 		/* Bundler mode */
-		"incremental": true,
-		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+		"outDir": "api/dist",
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"isolatedModules": true,
 		"moduleDetection": "force",
-		"noEmit": true,
+		"emitDeclarationOnly": true,
+		"composite": true,
 
 		/* Linting */
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+
+		/* Paths */
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["api/*"]
+		},
+
+		"types": ["@cloudflare/workers-types"]
 	},
-	"include": ["vite.config.ts"]
+	"include": ["api"]
 }
