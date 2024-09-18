@@ -7,32 +7,32 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ mode }) => {
-	if (mode === "client") {
+	if (mode === "server") {
 		return {
-			plugins: [TanStackRouterVite(), react(), tsconfigPaths()],
+			plugins: [
+				build({
+					entry: "api/index.ts",
+				}),
+				devServer({
+					adapter,
+					entry: "api/index.ts",
+				}),
+				tsconfigPaths(),
+			],
 			server: {
-				proxy: {
-					"/api": {
-						target: "http://localhost:5174",
-						changeOrigin: true,
-					},
-				},
+				port: 5174,
 			},
 		};
 	}
 	return {
-		plugins: [
-			build({
-				entry: "api/index.ts",
-			}),
-			devServer({
-				adapter,
-				entry: "api/index.ts",
-			}),
-			tsconfigPaths(),
-		],
+		plugins: [TanStackRouterVite(), react(), tsconfigPaths()],
 		server: {
-			port: 5174,
+			proxy: {
+				"/api": {
+					target: "http://localhost:5174",
+					changeOrigin: true,
+				},
+			},
 		},
 	};
 });
