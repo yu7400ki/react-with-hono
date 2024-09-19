@@ -6,9 +6,9 @@
 	"scripts": {
 		"dev": "run-p dev:*",
 		"dev:client": "vite",
-		"dev:server": "vite --mode server",
+		"dev:server": "vite --config vite.server.config.ts",
 		"dev:hcm": "bun run hcm -w",
-		"build": "tsc -b && vite build && vite build --mode server",
+		"build": "tsc -b && vite build && vite build --config vite.server.config.ts",
 		"preview": "bun run build && wrangler pages dev",
 		"deploy": "bun run build && wrangler pages deploy",
 		"lint": "biome check",
