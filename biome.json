@@ -24,7 +24,8 @@
 					"options": {
 						"filenameCases": ["kebab-case"]
 					}
-				}
+				},
+				"noNamespaceImport": "off"
 			},
 			"suspicious": {
 				"noReactSpecificProps": "off"
