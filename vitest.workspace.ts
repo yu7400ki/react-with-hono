@@ -5,6 +5,10 @@ import { defineWorkspace } from "vitest/config";
 export default defineWorkspace([
 	{
 		extends: "vite.config.ts",
+		plugins: [
+			// See options at: https://storybook.js.org/docs/writing-tests/vitest-plugin#storybooktest
+			storybookTest(),
+		],
 		test: {
 			name: "client",
 			browser: {
@@ -14,6 +18,7 @@ export default defineWorkspace([
 				provider: "playwright",
 			},
 			include: ["src/**/*.test.{ts,tsx}"],
+			setupFiles: ["./.storybook/vitest.setup.ts"],
 		},
 	},
 	{
