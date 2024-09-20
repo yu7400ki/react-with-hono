@@ -7,7 +7,7 @@
 		"dev": "run-p dev:*",
 		"dev:client": "vite",
 		"dev:server": "vite --config vite.server.config.ts",
-		"dev:hcm": "bun run hcm -w",
+		"dev:hcm": "hcm '**/*.module.css' -w",
 		"build": "tsc -b && vite build && vite build --config vite.server.config.ts",
 		"preview": "bun run build && wrangler pages dev",
 		"deploy": "bun run build && wrangler pages deploy",
@@ -16,7 +16,9 @@
 		"test": "vitest --run",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"hcm": "hcm '**/*.module.css'"
+		"generate": "run-p generate:*",
+		"generate:tsr": "tsr generate",
+		"generate:hcm": "hcm '**/*.module.css'"
 	},
 	"dependencies": {
 		"@tanstack/react-router": "^1.57.17",
@@ -39,6 +41,7 @@
 		"@storybook/react": "^8.3.1",
 		"@storybook/react-vite": "^8.3.1",
 		"@storybook/test": "^8.3.1",
+		"@tanstack/router-cli": "^1.58.1",
 		"@tanstack/router-devtools": "^1.57.17",
 		"@tanstack/router-plugin": "^1.57.15",
 		"@testing-library/dom": "^10.4.0",
