@@ -9,8 +9,8 @@
 		"dev:server": "vite --config vite.server.config.ts",
 		"dev:hcm": "hcm '**/*.module.css' -w",
 		"build": "tsc -b && vite build && vite build --config vite.server.config.ts",
-		"preview": "bun run build && wrangler pages dev",
-		"deploy": "bun run build && wrangler pages deploy",
+		"preview": "bun run build && wrangler dev",
+		"deploy": "bun run build && wrangler deploy",
 		"lint": "biome check",
 		"format": "biome check --write",
 		"test": "vitest --run",
@@ -59,7 +59,7 @@
 		"vite": "^5.4.8",
 		"vite-tsconfig-paths": "^5.0.1",
 		"vitest": "^2.1.1",
-		"wrangler": "^3.78.10"
+		"wrangler": "^3.78.11"
 	},
 	"overrides": {
 		"@types/node": "20.16.9"
