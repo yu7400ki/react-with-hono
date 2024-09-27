@@ -7,15 +7,20 @@
 	},
 	"formatter": { "enabled": true, "useEditorconfig": true },
 	"organizeImports": { "enabled": true },
+	"files": {
+		"ignore": ["public"]
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"all": true,
 			"correctness": {
-				"useImportExtensions": "off"
+				"useImportExtensions": "off",
+				"noUndeclaredDependencies": "off"
 			},
 			"performance": {
-				"useTopLevelRegex": "off"
+				"useTopLevelRegex": "off",
+				"noBarrelFile": "off"
 			},
 			"style": {
 				"noDefaultExport": "off",
@@ -32,7 +37,10 @@
 			}
 		}
 	},
-	"javascript": { "formatter": { "quoteStyle": "double" } },
+	"javascript": {
+		"formatter": { "quoteStyle": "double" },
+		"globals": ["React"]
+	},
 	"json": {
 		"parser": { "allowComments": true }
 	}
