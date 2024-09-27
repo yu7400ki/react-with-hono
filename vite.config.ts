@@ -5,6 +5,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default {
 	plugins: [TanStackRouterVite(), react(), tsconfigPaths()],
+	build: {
+		outDir: "dist/static",
+	},
 	server: {
 		proxy: {
 			"/api": {
