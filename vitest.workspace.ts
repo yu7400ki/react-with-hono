@@ -18,7 +18,7 @@ export default defineWorkspace([
 				provider: "playwright",
 			},
 			include: ["src/**/*.test.{ts,tsx}"],
-			setupFiles: ["./.storybook/vitest.setup.ts"],
+			setupFiles: ["./.storybook/vitest.setup.ts", "./src/tests/setup.ts"],
 		},
 	},
 	{
